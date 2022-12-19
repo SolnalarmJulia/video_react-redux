@@ -23,14 +23,23 @@ type Position = {
 }
 
 const positionSlice = createSlice({
-name: 'position',
-initialState: startPosition,
-reducers: {
-  moveLeft: position => ({...position, x: position.x - 1}),
-  moveRight: position => ({...position, x: position.x + 1}),
-  moveUp: position => ({...position, y: position.y - 1}),
-  moveDown: position => ({...position, y: position.y + 1}),
-}
+  name: 'position',
+  initialState: startPosition,
+  reducers: {
+    //moveLeft: position => ({...position, x: position.x - 1}),
+    moveLeft: position => {
+      position.x -= 1;
+    },
+    moveRight: position => {
+      position.x += 1;
+    },
+    moveUp: position => {
+      position.y -= 1;
+    },
+    moveDown: position => {
+      position.y += 1;
+    }
+  }
 })
 // const positionReducer = (
 //   position: Position = startPosition,
@@ -50,4 +59,4 @@ reducers: {
 // };
 
 export default positionSlice.reducer;
-export const { actions } = positionSlice ;
+export const { actions } = positionSlice;
